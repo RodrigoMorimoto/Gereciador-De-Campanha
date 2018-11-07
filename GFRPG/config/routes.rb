@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :assets
   resources :correlations
   resources :attributes
   resources :attribute_values
