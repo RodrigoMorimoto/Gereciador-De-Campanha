@@ -4,7 +4,7 @@ class CreateParticipations < ActiveRecord::Migration[5.1]
 
       t.timestamps
 
-      t.bool :Is_master
+      t.boolean :Is_master
     end
   end
 end
