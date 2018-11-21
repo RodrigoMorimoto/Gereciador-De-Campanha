@@ -14,7 +14,7 @@ class ParticipationsController < ApplicationController
 
   # GET /participations/new
   def new
-    @participation = Participation.new
+    @participation = Game.find(params[:game]).participations.new
   end
 
   # GET /participations/1/edit
