@@ -1,12 +1,10 @@
 class CreateSheets < ActiveRecord::Migration[5.1]
   def change
     create_table :sheets do |t|
-	  t.string :name
-	  t.asset_path
-	  
-      t.timestamps
 
+      t.timestamps
       t.string :Sheet_name
+      t.belongs_to :games, index: true
     end
   end
 end

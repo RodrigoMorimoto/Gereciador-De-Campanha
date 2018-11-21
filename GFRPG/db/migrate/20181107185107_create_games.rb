@@ -7,5 +7,7 @@ class CreateGames < ActiveRecord::Migration[5.1]
       t.string :Game_description
       t.datetime :Game_date
     end
+
+    
   end
 end
