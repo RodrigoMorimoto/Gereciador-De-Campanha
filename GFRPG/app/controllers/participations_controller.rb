@@ -25,7 +25,7 @@ class ParticipationsController < ApplicationController
   # POST /participations
   # POST /participations.json
   def create
-    @game = Game.find(params[:participation][:game])
+    @game = Game.find(participation_params[:game])
     @participation = @game.participations.build(participation_params.except(:game))
 
     respond_to do |format|
