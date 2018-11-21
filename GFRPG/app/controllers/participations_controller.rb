@@ -14,7 +14,8 @@ class ParticipationsController < ApplicationController
 
   # GET /participations/new
   def new
-    @participation = Game.find(params[:game]).participations.new
+    @participation = Participation.new
+    @game = Game.find(params[:game])
   end
 
   # GET /participations/1/edit
@@ -24,7 +25,8 @@ class ParticipationsController < ApplicationController
   # POST /participations
   # POST /participations.json
   def create
-    @participation = Participation.new(participation_params)
+    @game = Game.find(params[:participation][:game])
+    @participation = @game.participations.build(participation_params.except(:game))
 
     respond_to do |format|
       if @participation.save
