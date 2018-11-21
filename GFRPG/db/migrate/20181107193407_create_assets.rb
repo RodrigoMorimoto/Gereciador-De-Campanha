@@ -5,6 +5,7 @@ class CreateAssets < ActiveRecord::Migration[5.1]
       t.timestamps
 
       t.string :Asset_path
+      t.belongs_to :games, index: true
     end
   end
 end

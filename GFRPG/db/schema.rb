@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20181121194454) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "Asset_path"
+    t.integer "games_id"
+    t.index ["games_id"], name: "index_assets_on_games_id"
   end
 
   create_table "attribute_values", force: :cascade do |t|
@@ -48,6 +50,9 @@ ActiveRecord::Schema.define(version: 20181121194454) do
   create_table "sheets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "Sheet_name"
+    t.integer "games_id"
+    t.index ["games_id"], name: "index_sheets_on_games_id"
   end
 
   create_table "users", force: :cascade do |t|
