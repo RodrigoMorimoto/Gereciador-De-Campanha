@@ -5,6 +5,8 @@ class CreateSheets < ActiveRecord::Migration[5.1]
 	  t. img_path
 	  
       t.timestamps
+
+      t.string :Sheet_name
     end
   end
 end
