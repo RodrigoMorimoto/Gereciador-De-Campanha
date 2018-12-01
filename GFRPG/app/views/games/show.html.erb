@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Game_name:</strong>
+  <%= @game.Game_name %>
+</p>
+
+<p>
+  <strong>Game_description:</strong>
+  <%= @game.Game_description %>
+</p>
+
+<p>
+  <strong>Game_date:</strong>
+  <%= @game.Game_date %>
+</p>
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
 <%= link_to 'Adicionar Participação', new_participation_path(:game => @game) %>

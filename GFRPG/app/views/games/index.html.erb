@@ -11,6 +11,12 @@
 
   <tbody>
     <% @games.each do |game| %>
+      <p>
+          <strong>Game_name:</strong>
+          <!--%= @game.Game_name %-->
+          <%= game.Game_name %>
+      </p>
+
       <tr>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
