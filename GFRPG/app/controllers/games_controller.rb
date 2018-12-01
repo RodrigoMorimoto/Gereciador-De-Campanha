@@ -25,7 +25,7 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
-
+    #@game = Game.new(allowed_params)
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
@@ -61,6 +61,11 @@ class GamesController < ApplicationController
     end
   end
 
+
+  #def allowed_params
+    #params.require(:game_params).permit(:Game_name, :Game_description, :Game_date)
+  #end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
@@ -69,6 +74,10 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.fetch(:game, {})
+      #params.fetch(:game, {})
+      params.require(:game).permit(:Game_name, :Game_description, :Game_date)
     end
+
+
+    
 end

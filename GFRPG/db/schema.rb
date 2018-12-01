@@ -21,11 +21,20 @@ ActiveRecord::Schema.define(version: 20181121194454) do
   end
 
   create_table "attribute_values", force: :cascade do |t|
+    t.string "str_attribute_value"
+    t.integer "int_attribute_value"
+    t.boolean "bool_attribute_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "attribute_id"
+    t.integer "sheet_id"
+    t.index ["attribute_id"], name: "index_attribute_values_on_attribute_id"
+    t.index ["sheet_id"], name: "index_attribute_values_on_sheet_id"
   end
 
   create_table "attributes", force: :cascade do |t|
+    t.string "attribute_name"
+    t.integer "attribute_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,13 +47,19 @@ ActiveRecord::Schema.define(version: 20181121194454) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "Game_name"
+    t.string "Game_description"
+    t.datetime "Game_date"
   end
 
   create_table "participations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "Is_master"
+    t.integer "games_id"
     t.integer "game_id"
     t.index ["game_id"], name: "index_participations_on_game_id"
+    t.index ["games_id"], name: "index_participations_on_games_id"
   end
 
   create_table "sheets", force: :cascade do |t|
@@ -52,10 +67,18 @@ ActiveRecord::Schema.define(version: 20181121194454) do
     t.datetime "updated_at", null: false
     t.string "Sheet_name"
     t.integer "games_id"
+    t.integer "users_id"
     t.index ["games_id"], name: "index_sheets_on_games_id"
+    t.index ["users_id"], name: "index_sheets_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "User_name"
+    t.string "User_pass"
+    t.string "User_email"
+    t.string "User_nickname"
+    t.string "User_icon"
+    t.string "User_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

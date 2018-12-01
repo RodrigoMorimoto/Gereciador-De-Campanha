@@ -11,7 +11,25 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :Game_name %>
+    <%= form.text_field :Game_name, id: :game_Game_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Game_description %>
+    <%= form.text_area :Game_description, id: :game_Game_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Game_date %>
+    <%= form.date_select :Game_date, id: :game_Game_date %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+
