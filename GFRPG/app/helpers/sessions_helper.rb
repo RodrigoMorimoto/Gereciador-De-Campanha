@@ -1,6 +1,7 @@
 module SessionsHelper
-    def sign_in
+    def sign_in(mestre)
         session[:mestre_id] = @mestre.id
+        logger.debug "Person attributes hash: #{session[:mestre_id]}"
     end
 
     def current_user
