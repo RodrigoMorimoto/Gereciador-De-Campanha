@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181202114013) do
+ActiveRecord::Schema.define(version: 20181203195947) do
 
   create_table "assets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -51,7 +51,9 @@ ActiveRecord::Schema.define(version: 20181202114013) do
     t.string "Game_description"
     t.datetime "Game_date"
     t.integer "mestre_id"
+    t.integer "vinculo_id"
     t.index ["mestre_id"], name: "index_games_on_mestre_id"
+    t.index ["vinculo_id"], name: "index_games_on_vinculo_id"
   end
 
   create_table "mestres", force: :cascade do |t|
@@ -64,21 +66,23 @@ ActiveRecord::Schema.define(version: 20181202114013) do
   create_table "participations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "Is_master"
-    t.integer "games_id"
     t.integer "game_id"
     t.index ["game_id"], name: "index_participations_on_game_id"
-    t.index ["games_id"], name: "index_participations_on_games_id"
+  end
+
+  create_table "sheet_bs", force: :cascade do |t|
+    t.integer "vinculo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vinculo_id"], name: "index_sheet_bs_on_vinculo_id"
   end
 
   create_table "sheets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "Sheet_name"
-    t.integer "games_id"
-    t.integer "users_id"
-    t.index ["games_id"], name: "index_sheets_on_games_id"
-    t.index ["users_id"], name: "index_sheets_on_users_id"
+    t.integer "vinculo_id"
+    t.index ["vinculo_id"], name: "index_sheets_on_vinculo_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,6 +92,13 @@ ActiveRecord::Schema.define(version: 20181202114013) do
     t.string "User_nickname"
     t.string "User_icon"
     t.string "User_description"
+    t.integer "vinculo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vinculo_id"], name: "index_users_on_vinculo_id"
+  end
+
+  create_table "vinculos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

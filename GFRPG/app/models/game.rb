@@ -1,4 +1,4 @@
 class Game < ApplicationRecord
-    has_many :participations
+    belongs_to :vinculo
     belongs_to :mestre
 end

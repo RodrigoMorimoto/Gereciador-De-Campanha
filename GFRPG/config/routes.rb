@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :vinculos
+  resources :sheet_bs
   get 'sessions/new'
 
 
