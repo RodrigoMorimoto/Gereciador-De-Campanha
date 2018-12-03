@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mestres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Secret</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mestres.each do |mestre| %>
+      <tr>
+        <td><%= mestre.name %></td>
+        <td><%= mestre.secret %></td>
+        <td><%= link_to 'Show', mestre %></td>
+        <td><%= link_to 'Edit', edit_mestre_path(mestre) %></td>
+        <td><%= link_to 'Destroy', mestre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mestre', new_mestre_path %>

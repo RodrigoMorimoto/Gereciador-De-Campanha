@@ -1,0 +1,21 @@
+
+<h1>Gerenciado de Campanha</h1>
+
+<%= form_for :session, url: sign_in_path do |form| %>
+
+    <div class="field">
+        <%= form.label :User_Name %>
+        <%= form.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="field">
+        <%= form.label :password %>
+        <%= form.password_field :secret, autocomplete: "off" %>
+    </div>
+    <div class="actions">
+    
+    <%= form.submit "Log in" %>
+  </div>
+<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+<p>New master? <%= link_to "become a master right now!", new_mestre_path %></p>
+<% end %>
