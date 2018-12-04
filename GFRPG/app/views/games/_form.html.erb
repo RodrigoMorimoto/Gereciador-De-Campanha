@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :Game_name %>
-    <%= form.text_field :Game_name, id: :game_Game_name %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :game_name %>
   </div>
 
   <div class="field">
-    <%= form.label :Game_description %>
-    <%= form.text_area :Game_description, id: :game_Game_description %>
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :game_description %>
   </div>
 
   <div class="field">
-    <%= form.label :Game_date %>
-    <%= form.date_select :Game_date, id: :game_Game_date %>
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :game_date %>
   </div>
 
   <%= form.hidden_field :mestre_id, :value =>  cookies[:mestre] %>

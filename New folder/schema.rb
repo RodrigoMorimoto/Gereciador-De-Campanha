@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20181203195947) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Game_name"
-    t.string "Game_description"
-    t.datetime "Game_date"
+    t.string "name"
+    t.string "description"
+    t.datetime "date"
     t.integer "mestre_id"
     t.index ["mestre_id"], name: "index_games_on_mestre_id"
   end

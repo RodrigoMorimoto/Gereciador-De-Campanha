@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20181203195947) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Game_name"
-    t.string "Game_description"
-    t.datetime "Game_date"
+    t.string "name"
+    t.string "description"
+    t.datetime "date"
     t.integer "mestre_id"
     t.index ["mestre_id"], name: "index_games_on_mestre_id"
   end
@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(version: 20181203195947) do
   end
 
   create_table "sheet_bs", force: :cascade do |t|
+    t.integer "strength"
+    t.integer "endurance"
+    t.integer "agility"
+    t.integer "intelligence"
+    t.integer "willpower"
+    t.integer "personality"
+    t.integer "perception"
+    t.integer "luck"
+    t.integer "hp"
+    t.string "race"
+    t.string "name"
     t.integer "vinculo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,7 +89,18 @@ ActiveRecord::Schema.define(version: 20181203195947) do
   create_table "sheets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Sheet_name"
+    t.integer "strength"
+    t.integer "sheet_dextery"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "armorclass"
+    t.integer "maxhp"
+    t.integer "temphp"
+    t.string "name"
+    t.string "race"
+    t.integer "level"
     t.integer "vinculo_id"
     t.index ["vinculo_id"], name: "index_sheets_on_vinculo_id"
   end
