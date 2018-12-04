@@ -2,12 +2,12 @@ class CreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
 
-      t.string :User_name
-      t.string :User_pass
-      t.string :User_email
-      t.string :User_nickname
-      t.string :User_icon
-      t.string :User_description
+      t.string :name
+      t.string :pass
+      t.string :email
+      t.string :nickname
+      t.string :icon
+      t.string :description
 
       #t.belongs_to :vinculo, index: true
 

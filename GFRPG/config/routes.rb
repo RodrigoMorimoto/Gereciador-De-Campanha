@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  resources :vinculos
-  resources :sheet_bs
-  get 'sessions/new'
 
-
-  get    ''   => 'sessions#new'
+  root to: 'sessions#new'
+  #get    ''   => 'sessions#new'
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
   
+  resources :vinculos
+  resources :sheet_bs
   resources :mestres
   resources :assets
   resources :correlations
