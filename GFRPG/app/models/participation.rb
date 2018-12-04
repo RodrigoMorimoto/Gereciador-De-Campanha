@@ -1,4 +1,0 @@
-class Participation < ApplicationRecord
-	
-
-end
