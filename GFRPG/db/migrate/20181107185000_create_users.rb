@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :User_icon
       t.string :User_description
 
-      t.belongs_to :vinculo, index: true
+      #t.belongs_to :vinculo, index: true
 
       t.timestamps
     end

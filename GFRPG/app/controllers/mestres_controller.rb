@@ -70,5 +70,6 @@ class MestresController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def mestre_params
       params.require(:mestre).permit(:name, :secret)
+      
     end
 end

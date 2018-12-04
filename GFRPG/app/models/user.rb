@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-    belongs_to :vinculo
+    has_many :vinculo
+    #belongs_to :vinculo
 end

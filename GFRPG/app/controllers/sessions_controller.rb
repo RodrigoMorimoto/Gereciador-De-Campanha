@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
 before_action :block_access, except: [:destroy]
-  def create  
+  def create
             @mestre = Mestre.find_by(name: params[:session][:name].downcase)
             if @mestre[:secret] == (params[:session][:secret])
-                        sign_in(@mestre)
+                        #sign_in(@mestre)
+                cookies[:mestre] = @mestre[:id]
             redirect_to games_path
     else
             render 'new'

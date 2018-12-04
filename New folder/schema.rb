@@ -64,8 +64,11 @@ ActiveRecord::Schema.define(version: 20181203195947) do
   create_table "participations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "Is_master"
+    t.integer "games_id"
     t.integer "game_id"
     t.index ["game_id"], name: "index_participations_on_game_id"
+    t.index ["games_id"], name: "index_participations_on_games_id"
   end
 
   create_table "sheet_bs", force: :cascade do |t|
@@ -79,8 +82,10 @@ ActiveRecord::Schema.define(version: 20181203195947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "Sheet_name"
-    t.integer "vinculo_id"
-    t.index ["vinculo_id"], name: "index_sheets_on_vinculo_id"
+    t.integer "games_id"
+    t.integer "users_id"
+    t.index ["games_id"], name: "index_sheets_on_games_id"
+    t.index ["users_id"], name: "index_sheets_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,15 +97,12 @@ ActiveRecord::Schema.define(version: 20181203195947) do
     t.string "User_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password"
   end
 
   create_table "vinculos", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "games_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["games_id"], name: "index_vinculos_on_games_id"
-    t.index ["users_id"], name: "index_vinculos_on_users_id"
   end
 
 end

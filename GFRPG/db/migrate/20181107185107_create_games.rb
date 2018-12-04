@@ -8,7 +8,7 @@ class CreateGames < ActiveRecord::Migration[5.1]
       t.datetime :Game_date
 
       t.belongs_to :mestre, index: true
-      t.belongs_to :vinculo, index: true
+      #t.belongs_to :vinculo, index: true
 
     end
 
